@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            /*font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #332973;
+            color: black;*/
+            
+            color:white;
+            margin: 0;
+            padding: 0;
+            background-image: url('C:/Users/Bhakti/Downloads/ByteTech/CyberWatch_AI/images/s11.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            /*height: 100vh;*/
+            font-family: 'Roboto', sans-serif;
+            backdrop-filter: blur(8px);
+        }
+
+        header {
+            text-align: center;
+            padding: 40px;
+            background-color:transparent;
+            color:white;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        header p {
+            margin: 5px 0;
+            font-size: 1.2em;
+        }
+
+        section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1.5px solid #ffffff; /* You can adjust the width and color of the border */
+}
+
+
+        section img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        section h2 {
+            color: white;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color:transparent;
+            color: white;
+        }
+        .skills-list .highlight::before {
+    content: " • ";
+    font-weight: bold;
+}
+
+    </style>
+    <title>Bhakti Shinde-Portfolio</title>
+</head>
+<body>
+    <header>
+        <h1>Bhakti Shinde</h1>
+        <p>Web Developer</p>
+    </header>
+
+    
+    
+    <section id="about">
+        <h2>ABOUT ME</h2>
+        <img src="img1.jpg" alt="Bhakti Shinde" width="150" height="200"><p>Bhakti Shinde</p>
+        <div id="about-content">
+            <p>Aspiring professional with a passion for Cloud and AI, eager to kickstart a career in these cutting-edge technologies. Committed to learning and contributing to innovative projects. 
+                Ready to bring enthusiasm, adaptability, and a strong desire to grow in a dynamic work environment.<br><br>
+                Bachelors, Computer Engineering. (Pursuing, Sem 6/8) </p>
+        </div>
+        <button onclick="editAbout()">Edit</button>
+        <form id="edit-about-form" style="display: none;">
+            <textarea id="about-textarea"></textarea><br>
+            <button type="button" onclick="saveAbout()">Save</button>
+            <button type="button" onclick="cancelEditAbout()">Cancel</button>
+        </form>
+    </section>
+    
+    <script>
+        function editAbout() {
+            var aboutContent = document.getElementById('about-content').innerHTML.trim();
+            document.getElementById('about-content').style.display = 'none';
+            document.getElementById('edit-about-form').style.display = 'block';
+            document.getElementById('about-textarea').value = aboutContent;
+        }
+    
+        function saveAbout() {
+            var editedAbout = document.getElementById('about-textarea').value;
+            document.getElementById('about-content').innerHTML = '<p>' + editedAbout + '</p>';
+            document.getElementById('about-content').style.display = 'block';
+            document.getElementById('edit-about-form').style.display = 'none';
+        }
+    
+        function cancelEditAbout() {
+            document.getElementById('about-content').style.display = 'block';
+            document.getElementById('edit-about-form').style.display = 'none';
+        }
+    </script>
+    
+    <section id="skills">
+        <h2>SKILLS</h2>
+        <div id="skills-content">
+            <ul class="skills-list">
+                <li><h3>Technical:</h3></li>
+                <li class="highlight"><b>Programming Languages:</b>
+                    <ul>
+                        <li>Basics of C++</li>
+                        <li>Basics of Java</li>
+                        <li>Python:
+                            <ul>
+                                <li>Basics of Python programming.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li><br>
+                <li class="highlight"><b>MySQL:</b>
+                    <ul>
+                        <li>Designing and implementing MySQL databases.</li>
+                        <li>Hands-on experience in designing, implementing, and maintaining relational databases.</li>
+                    </ul>
+                </li><br>
+                <li class="highlight"><b>Fundamentals of Web Development:</b>
+                    <ul>
+                        <li>Proficient in HTML, CSS, and JavaScript.</li>
+                        <li>Created responsive web pages, Familiar with UX/UI principles and basic SEO concepts.</li>
+                    </ul>
+                </li><br>
+                <li><h3>Languages:</h3></li>
+                <ul>
+                    <li>English</li>
+                    <li>Marathi</li>
+                    <li>Hindi</li>
+                </ul>
+                <li><h3>Interest:</h3></li>
+                <ul>
+                    <li>Sketching</li>
+                    <li>Traveling</li>
+                    <li>Singing</li>
+                    <li>Swimming</li>
+                    <li>Singing</li>
+                    <li>Web Development</li>
+                    <li>Flutter Development</li>
+                </ul>
+            </ul>
+        </div>
+        <button onclick="editSkills()">Edit</button>
+        <form id="edit-skills-form" style="display: none;">
+            <!-- Input fields for editing skills -->
+            <textarea id="edited-skills" style="width: 100%; height: 200px;"></textarea><br>
+            <button type="button" onclick="saveSkills()">Save</button>
+            <button type="button" onclick="cancelEditSkills()">Cancel</button>
+        </form>
+    </section>
+    
+    <script>
+        function editSkills() {
+            var skillsContent = document.getElementById('skills-content').innerHTML;
+            document.getElementById('edited-skills').value = skillsContent;
+            document.getElementById('skills-content').style.display = 'none';
+            document.getElementById('edit-skills-form').style.display = 'block';
+        }
+    
+        function saveSkills() {
+            var editedSkillsContent = document.getElementById('edited-skills').value;
+            document.getElementById('skills-content').innerHTML = editedSkillsContent;
+            document.getElementById('skills-content').style.display = 'block';
+            document.getElementById('edit-skills-form').style.display = 'none';
+        }
+    
+        function cancelEditSkills() {
+            document.getElementById('skills-content').style.display = 'block';
+            document.getElementById('edit-skills-form').style.display = 'none';
+        }
+    </script>    
+        
+        <section id="Experience">
+            <h2>EXPERIENCE</h2>
+            <div id="experience-content">
+                <h3>Coincent.ai(Intern-Aug 2023 - Sep 2023 (2 months))</h3>
+                <ul>
+                    <li>• Contributed to the development team as a Web Development Intern.</li>
+                    <li>• Gained practical experience in creating and maintaining web applications.</li>
+                </ul>
+            </div>
+            <button onclick="editExperience()">Edit</button>
+            <form id="edit-experience-form" style="display: none;">
+                <input type="text" id="experience-title" placeholder="Title"><br>
+                <textarea id="experience-description" placeholder="Description"></textarea><br>
+                <button type="button" onclick="saveExperience()">Save</button>
+                <button type="button" onclick="cancelEditExperience()">Cancel</button>
+            </form>
+        </section>
+        
+        <script>
+            function editExperience() {
+                var experienceTitle = document.getElementById('experience-content').querySelector('h3').innerText;
+                var experienceDescription = document.getElementById('experience-content').querySelector('ul').innerHTML.trim();
+                document.getElementById('experience-content').style.display = 'none';
+                document.getElementById('edit-experience-form').style.display = 'block';
+                document.getElementById('experience-title').value = experienceTitle;
+                document.getElementById('experience-description').value = experienceDescription;
+            }
+        
+            function saveExperience() {
+                var editedTitle = document.getElementById('experience-title').value;
+                var editedDescription = document.getElementById('experience-description').value;
+                var newExperienceContent = '<h3>' + editedTitle + '</h3><ul>' + editedDescription + '</ul>';
+                document.getElementById('experience-content').innerHTML = newExperienceContent;
+                document.getElementById('experience-content').style.display = 'block';
+                document.getElementById('edit-experience-form').style.display = 'none';
+            }
+        
+            function cancelEditExperience() {
+                document.getElementById('experience-content').style.display = 'block';
+                document.getElementById('edit-experience-form').style.display = 'none';
+            }
+        </script>
+        
+        <section id="projects">
+            <h2>PROJECTS</h2>
+            <div id="projects-content">
+                <ul>
+                    <li>Participated in a dynamic team in Smart India Hackathon 2023 Finale for problem statement of NTRO, resulting in the successful implementation of AI/ML tool to detect whether system is compromised.</li>
+                    <li>I have successfully completed the bootcamp at IIM Sambalpur, Odisha.</li>
+                </ul>
+            </div>
+            <button onclick="editProjects()">Edit</button>
+            <form id="edit-projects-form" style="display: none;">
+                <textarea id="edited-projects" style="width: 100%; height: 200px;"></textarea><br>
+                <button type="button" onclick="saveProjects()">Save</button>
+                <button type="button" onclick="cancelEditProjects()">Cancel</button>
+            </form>
+        </section>
+        
+        <script>
+            function editProjects() {
+                var projectsContent = document.getElementById('projects-content').innerHTML;
+                document.getElementById('edited-projects').value = projectsContent;
+                document.getElementById('projects-content').style.display = 'none';
+                document.getElementById('edit-projects-form').style.display = 'block';
+            }
+        
+            function saveProjects() {
+                var editedProjectsContent = document.getElementById('edited-projects').value;
+                document.getElementById('projects-content').innerHTML = editedProjectsContent;
+                document.getElementById('projects-content').style.display = 'block';
+                document.getElementById('edit-projects-form').style.display = 'none';
+            }
+        
+            function cancelEditProjects() {
+                document.getElementById('projects-content').style.display = 'block';
+                document.getElementById('edit-projects-form').style.display = 'none';
+            }
+        </script>
+        
+
+        <section id="resume">
+            <h2>RESUME</h2>
+            <div id="resume-content">
+                <p><a id="resume-link" href="C:\Users\Bhakti\Downloads\Bhakti_Shinde_Resume.pdf" target="_blank">Download Resume (PDF)</a></p>
+            </div>
+            <button onclick="editResume()">Edit</button>
+            <form id="edit-resume-form" style="display: none;">
+                <input type="text" id="resume-link-input" placeholder="Enter Resume Link"><br>
+                <button type="button" onclick="saveResume()">Save</button>
+                <button type="button" onclick="cancelEditResume()">Cancel</button>
+            </form>
+        </section>
+        
+        <script>
+            function editResume() {
+                var resumeLink = document.getElementById('resume-link').getAttribute('href');
+                document.getElementById('resume-link-input').value = resumeLink;
+                document.getElementById('resume-content').style.display = 'none';
+                document.getElementById('edit-resume-form').style.display = 'block';
+            }
+        
+            function saveResume() {
+                var newResumeLink = document.getElementById('resume-link-input').value;
+                document.getElementById('resume-link').setAttribute('href', newResumeLink);
+                document.getElementById('resume-content').style.display = 'block';
+                document.getElementById('edit-resume-form').style.display = 'none';
+            }
+        
+            function cancelEditResume() {
+                document.getElementById('resume-content').style.display = 'block';
+                document.getElementById('edit-resume-form').style.display = 'none';
+            }
+        </script>
+        
+        
+
+        <section id="contact">
+            <h2>CONTACT</h2>
+            <p>Email: sbhaktishinde@email.com</p>
+            <p>Phone: 8767928180</p>
+            <button onclick="editContact()">Edit</button>
+            <form id="edit-contact-form" style="display: none;">
+                <!-- Add input fields for editing contact information -->
+                <button type="button" onclick="saveContact()">Save</button>
+                <button type="button" onclick="cancelEditContact()">Cancel</button>
+            </form>
+        </section>
+        
+        <script>
+            function editContact() {
+                // Retrieve existing contact information and populate input fields for editing
+                document.getElementById('contact').querySelectorAll('p').forEach(function(item) {
+                    var text = item.innerHTML.trim();
+                    var inputField = document.createElement('input');
+                    inputField.value = text;
+                    item.replaceWith(inputField);
+                });
+                document.getElementById('edit-contact-form').style.display = 'block';
+            }
+        
+            function saveContact() {
+                // Retrieve edited contact information from input fields
+                // Update contact section with edited data
+                document.getElementById('edit-contact-form').style.display = 'none';
+            }
+        
+            function cancelEditContact() {
+                // Restore original contact information
+                document.getElementById('contact').querySelectorAll('input').forEach(function(item) {
+                    var text = item.value;
+                    var paragraph = document.createElement('p');
+                    paragraph.innerHTML = text;
+                    item.replaceWith(paragraph);
+                });
+                document.getElementById('edit-contact-form').style.display = 'none';
+            }
+        </script>
+        
+        <footer>
+            &copy; 2024 Bhakti Shinde | <a href="https://www.linkedin.com/in/bhakti-shinde-92429326b" target="_blank">LinkedIn</a> | <a href="https://github.com/BhaktiS1234567/Intern-Army.git">GitHub</a>
+        </footer>
+        
+</body>
+</html>
