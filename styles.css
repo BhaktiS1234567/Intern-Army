@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("C:/Users/Bhakti/OneDrive/Desktop/coding/InternArmy/img2.jpg");
+}
+
+.container {
+    max-width: 900px;
+    max-height: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #15bbe4 ;
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: transparent; /* Change background color */
+    color: black; /* Change text color */
+}
+
+input[type="text"]::placeholder {
+    color: white;
+}
+
+#categorySelect {
+    width: 20%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+}
+
+button {
+    padding: 8px 15px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid #15bbe4;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #15bbe4;
+    border-color: #15bbe4;
+}
+
+.task {
+    margin-bottom: 10px;
+}
+
+.task input[type="checkbox"] {
+    margin-right: 5px;
+    border: 2px solid #15bbe4;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #000000;
+}
+
